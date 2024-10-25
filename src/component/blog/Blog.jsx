@@ -1,7 +1,7 @@
 import { ImAddressBook } from "react-icons/im";
 import PropTypes from 'prop-types';
 const Blog = ({blog,addToBookMark,markAsRead}) => {
-   const {title,cover,author,author_img,reading_time,posted_date,hashtags} = blog;
+   const {id,title,cover,author,author_img,reading_time,posted_date,hashtags} = blog;
 //    console.log(blog)
     return (
         <div className=' border border-violet-600 mb-12 pb-5 border-b-1 rounded-xl'>
@@ -27,7 +27,7 @@ const Blog = ({blog,addToBookMark,markAsRead}) => {
                 hashtags.map((hush,inx)=><span className='me-2' key={inx}><a href="#">#{hush}</a></span>)
             }
             </p>
-            <button className="block ms-5 mt-6 px-8 py-2 text-amber-900 font-semibold bg-orange-100 border rounded-full" onClick={()=>markAsRead(reading_time)}>Mark As Read</button>
+            <button className="block ms-5 mt-6 px-8 py-2 text-amber-900 font-semibold bg-orange-100 border rounded-full" onClick={()=>markAsRead(reading_time, id)}>Mark As Read</button>
         </div>
     );
 };
